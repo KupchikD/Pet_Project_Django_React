@@ -29,7 +29,7 @@ const ProductPage = () => {
       {product && (
         <div className="product-card">
           <h2>{product.name}</h2>
-          <img src={product.image} alt={product.name} />
+          <img src={`http://127.0.0.1:8000${product.image}`} alt={product.name} />
           <p>Цена: {product.price}</p>
           <p>Статус: {product.status}</p>
           <p>{product.description}</p>
