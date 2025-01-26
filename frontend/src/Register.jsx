@@ -108,6 +108,7 @@ const Register = () => {
     };
 
     return (
+        <body>
         <div>
             <h1>Join MyWishlist</h1>
             <h3>Create an account to save your wishlist and share it with friends</h3>
@@ -153,9 +154,9 @@ const Register = () => {
                 <button type="submit">Sign up</button>
                 <p>Already have an account? <a><b>Log in</b></a></p>
             </form>
-            {message && <p>{message}</p>}
-            <p className="foot">By continuing, you agree to the <a><b>Terms of Use</b></a> and <a><b>Privacy Policy</b></a></p>
         </div>
+        <p className="foot">By continuing, you agree to the <a><b>Terms of Use</b></a> and <a><b>Privacy Policy</b></a></p>
+        </body>
     );
 };
 

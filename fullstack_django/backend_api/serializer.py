@@ -1,11 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Wish
-
-class WishSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Wish
-        fields = ["title", "cost"]
+from .models import Product_card
 
 
 
@@ -24,3 +19,9 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product_card
+        fields = ['id', 'name', 'description', 'price', 'image', 'status']
