@@ -21,7 +21,21 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
+from rest_framework import serializers
+from .models import Product_card
+
 class ProductSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(required=False)  # Для обработки изображений
+    url = serializers.URLField(required=False)  # Для обработки URL
+
     class Meta:
         model = Product_card
-        fields = ['id', 'name', 'description', 'price', 'image', 'status']
+        fields = ['id', 'name', 'description', 'price', 'image', 'status', 'currency', 'url']
+
+
+    def create(self, validated_data):
+        print("Validated data:", validated_data)
+        product = Product_card.objects.create(**validated_data)
+        return product
+        # return super().create(validated_data)
+
